@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact - Jeunes Bénévoles</title>
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>.infos i{width:1.5em;margin-right:6px;text-align:center;font-size:1.15rem}.infos a{font-weight:600}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants(Bukavu)</a>
+  <nav>
+    <a href="accueil.html" >Accueil</a>
+    <a href="activites.html" >Activités</a>
+    <a href="apropos.html" >À propos</a>
+    <a href="contact.html" class="on">Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>Contactez-nous</h2>
+  <p>Une question, une idée, l'envie de nous rejoindre ? Écrivez-nous.</p><br>
+  <form id="cf">
+    <label>Nom<input name="nom" required></label><br>
+    <br>
+    <label>Message<textarea name="msg" required></textarea></label><br>
+    <br>
+    <button class="btn" type="submit">Envoyer le message</button><br>
+    <br>
+  </form>
+  <div class="infos">
+    <span><i class="fa-solid fa-envelope" style="color:#1F7A6D"></i>E-mail : <a href="mailto:aidonsnousvivants.bkv@gmail.com">aidonsnousvivants.bkv@gmail.com</a></span><br>
+    <span><i class="fa-solid fa-phone" style="color:#1F7A6D"></i>Téléphone : +243982491213</span><br>
+    <span><i class="fa-solid fa-location-dot" style="color:#1F7A6D"></i>Adresse : Bukavu, RD Congo</span><br>
+    <span><i class="fa-brands fa-facebook" style="color:#1877F2"></i>Facebook : <a href="https://www.facebook.com/profile.php?id=61584535768322" target="_blank" rel="noopener">Notre page Facebook</a></span><br>
+    <span><i class="fa-brands fa-whatsapp" style="color:#25D366"></i>WhatsApp : <a href="https://whatsapp.com/channel/0029VbBJ0K8EQIapvASpIw3e" target="_blank" rel="noopener">Notre chaîne WhatsApp</a></span><br>
+    <span><i class="fa-brands fa-youtube" style="color:#FF0000"></i>YouTube : <a href="https://youtube.com/@aidons-nousvivantsbukavu?si=8vJ4s4unKNNmD3Sr" target="_blank" rel="noopener">Notre chaîne YouTube</a></span><br>
+    <span><i class="fa-brands fa-instagram" style="color:#E4405F"></i>Instagram : <a href="https://www.instagram.com/aidonsnousvivantsbukav?igsh=NDh4dDdtM2ZsbHk2" target="_blank" rel="noopener">Notre compte Instagram</a></span><br>
+    <span><i class="fa-brands fa-tiktok" style="color:#12262B"></i>TikTok : <a href="https://www.tiktok.com/@VOTRE-COMPTE" target="_blank" rel="noopener">Notre compte TikTok</a></span>
+  </div>
+</main>
+  <br>
+  <center><footer>© <span id="y"></span> Aidons-nous Vivants/Bukavu</footer></center>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+document.getElementById("cf").onsubmit=async e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const {error}=await sb.from("messages").insert({nom:f.get("nom"),message:f.get("msg")});
+  if(error){alert("Erreur, veuillez réessayer.");return}
+  alert("Message envoyé, merci !"); e.target.reset();
+};
+</script>
+</body>
+</html>

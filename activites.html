@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activités - Jeunes Bénévoles</title>
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants/Bukavu</a>
+  <nav>
+    <a href="accueil.html" >Accueil</a>
+    <a href="activites.html" class="on">Activités</a>
+    <a href="apropos.html" >À propos</a>
+    <a href="contact.html" >Contact</a>
+  </nav>
+</header>
+<main>
+  <h2>Nos activités</h2>
+  <p>Photos et vidéos de nos actions. Touchez une image pour l'agrandir.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+  <center><div id="lb" role="dialog" aria-modal="true"><div id="lbc"></div><p id="lbt"></p><button class="btn" id="lbx">Fermer</button></div></center>
+</main>
+<footer>© <span id="y"></span> Jeunes Bénévoles</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>

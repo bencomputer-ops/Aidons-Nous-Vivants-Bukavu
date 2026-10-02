@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Administration - Jeunes Bénévoles</title>
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Administration(Aidons-nous Vivants/Bukavu)</a>
+  <nav><a href="accueil.html">← Retour au site</a><a href="#" id="out" hidden>Déconnexion</a></nav>
+</header>
+<main>
+
+<!-- Connexion -->
+  <center>
+<section id="login">
+  <h2>Espace administrateur</h2><br>
+  <form id="lf">
+    <label>E-mail<input id="em" type="email" required></label><br>
+    <br>
+    <label>Mot de passe<input id="pw" type="password" required></label><br>
+    <br>
+    <button class="btn" type="submit">Se connecter</button>
+    <p class="err" id="lerr"></p>
+    <p class="err" id="cfg" hidden>Supabase n'est pas encore configuré : remplissez le fichier config.js, puis rechargez la page.</p>
+  </form>
+</section>
+  </center>
+<!-- Tableau de bord -->
+<section id="panel" hidden>
+  <div class="tabs">
+    <button class="on" data-t="add">Ajouter une activité</button>
+    <button data-t="msgs">Messages<span class="badge" id="nb" hidden>0</span></button>
+  </div>
+
+  <div id="t-add">
+    <div class="box">
+      <h2 style="font-size:1.5rem">Nouvelle publication</h2>
+      <form id="af">
+        <label>Album / activité
+          <input id="album" list="albums" placeholder="Ex : Nettoyage de plage" required>
+          <datalist id="albums"></datalist>
+        </label>
+        <label>Titre<input id="titre" required></label>
+        <label>Type
+          <select id="type">
+            <option value="photo">Photo(s)</option>
+            <option value="video">Vidéo (fichier)</option>
+            <option value="youtube">Vidéo YouTube (lien)</option>
+          </select>
+        </label>
+        <label id="fl">Fichier(s)<input id="files" type="file" accept="image/*" multiple></label>
+        <label id="yl" hidden>Lien YouTube<input id="yt" placeholder="https://youtu.be/..."></label>
+        <button class="btn" type="submit">Publier</button>
+        <p id="ast" role="status"></p>
+      </form>
+    </div>
+    <div class="box"><h2 style="font-size:1.3rem">Déjà publié</h2><div id="acts"></div></div>
+  </div>
+
+  <div id="t-msgs" hidden><div id="msgs"></div></div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
