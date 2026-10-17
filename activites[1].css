@@ -1,0 +1,28 @@
+[hidden]{display:none!important}
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:6px 0 16px}
+.bar .back{background:var(--ink);color:#fff;text-decoration:none;font-weight:600;padding:8px 18px;border-radius:999px}
+.albtitle{margin:0;font-size:1.5rem}
+.gal h4{margin:22px 0 10px;font-size:1.1rem}
+
+/* Liste des albums */
+.gal.albums{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.album{display:block;text-decoration:none;color:inherit;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(18,38,43,.1);transition:transform .15s}
+.album:hover{transform:translateY(-3px)}
+.cover{display:block;position:relative;aspect-ratio:4/3;background:#d5e3e0;overflow:hidden}
+.cover img,.cover video{width:100%;height:100%;object-fit:cover;display:block}
+.meta{display:block;padding:10px 14px 14px}
+.meta b{display:block;line-height:1.25}
+.meta small{display:block;opacity:.7;margin-top:2px}
+
+/* Contenu d'un album : petites miniatures */
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.th{position:relative;aspect-ratio:1;border:0;padding:0;border-radius:12px;overflow:hidden;background:#d5e3e0;cursor:pointer}
+.th img,.th video{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:1.8rem;text-shadow:0 2px 10px #000;pointer-events:none}
+
+/* Agrandissement */
+#lb img,#lb video{max-width:94vw;max-height:76vh;object-fit:contain}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
+.nav.prev{left:8px}.nav.next{right:8px}
+
+
