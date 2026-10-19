@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact - Aidons-nous Vivants Bukavu</title>
+<meta name="description" content="Contactez le groupe de jeunes bénévoles Aidons-nous Vivants, à Bukavu : message, e-mail, téléphone et réseaux sociaux.">
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css?v=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants/Bukavu</a>
+  <nav>
+    <a href="accueil.html" >Accueil</a>
+    <a href="activites.html" >Activités</a>
+    <a href="apropos.html" >À propos</a>
+    <a href="contact.html" class="on">Contact</a>
+  </nav>
+</header>
+<main class="home">
+  <section class="phead"><div class="wrap">
+    <h1>Contactez-nous</h1>
+    <p>Une question, une idée, l'envie de nous rejoindre ? Écrivez-nous, nous vous répondrons.</p>
+  </div></section>
+  <section class="wrap ct">
+    <div>
+      <h2>Envoyer un message</h2>
+      <form id="cf">
+        <label>Votre nom<input name="nom" required></label>
+        <label>Votre e-mail ou téléphone <input name="contact"></label><br>
+        <label><br>Message<textarea name="msg" required></textarea></label>
+        <button class="btn" type="submit">Envoyer le message</button>
+        <p id="st" role="status"></p>
+      </form>
+    </div>
+    <div>
+      <h2>Nous trouver</h2>
+      <div class="infos">
+        <span><i class="fa-solid fa-envelope" style="color:#1F7A6D"></i>E-mail : <a href="mailto:aidonsnousvivants.bkv@gmail.com">aidonsnousvivants.bkv@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone" style="color:#1F7A6D"></i>Téléphone : +243982491213</span>
+        <span><i class="fa-solid fa-location-dot" style="color:#1F7A6D"></i>Adresse : Bukavu, RD Congo</span>
+        <span><i class="fa-brands fa-facebook" style="color:#1877F2"></i>Facebook : <a href="https://www.facebook.com/profile.php?id=61584535768322" target="_blank" rel="noopener">Notre page Facebook</a></span>
+        <span><i class="fa-brands fa-whatsapp" style="color:#25D366"></i>WhatsApp : <a href="https://whatsapp.com/channel/0029VbBJ0K8EQIapvASpIw3e" target="_blank" rel="noopener">Notre chaîne WhatsApp</a></span>
+        <span><i class="fa-brands fa-youtube" style="color:#FF0000"></i>YouTube : <a href="https://youtube.com/@aidons-nousvivantsbukavu" target="_blank" rel="noopener">Notre chaîne YouTube</a></span>
+        <span><i class="fa-brands fa-instagram" style="color:#E4405F"></i>Instagram : <a href="https://www.instagram.com/aidonsnousvivantsbukav" target="_blank" rel="noopener">Notre compte Instagram</a></span>
+      </div>
+    </div>
+  </section>
+</main>
+<center><footer>© <span id="y"></span> Aidons-nous Vivants/Bukavu</footer></center>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="contact-infos.js"></script>
+<script>
+document.getElementById("cf").onsubmit=async function(e){
+  e.preventDefault();
+  var st=document.getElementById("st"), b=e.target.querySelector("button"), f=new FormData(e.target);
+  if(typeof sb==="undefined"){st.className="err";st.textContent="Le formulaire n'est pas disponible pour le moment.";return}
+  b.disabled=true; st.className=""; st.textContent="Envoi en cours…";
+  var r=await sb.from("messages").insert({nom:f.get("nom"),contact:f.get("contact")||null,message:f.get("msg")});
+  b.disabled=false;
+  if(r.error){st.className="err";st.textContent="Le message n'a pas pu être envoyé. Réessayez dans un instant.";return}
+  st.className="ok"; st.textContent="Merci ! Votre message a bien été envoyé."; e.target.reset();
+};
+</script>
+</body>
+</html>

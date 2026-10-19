@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aidons-nous Vivants/Bukavu</title>
+<meta name="description" content="Aidons-nous Vivants, à Bukavu : un groupe de jeunes bénévoles qui agit pour le bien de tous, avec l'esprit de charité.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aidons-nous Vivants Bukavu - Groupe de jeunes bénévoles">
+<meta property="og:description" content="Aidons-nous Vivants, à Bukavu : un groupe de jeunes bénévoles qui agit pour le bien de tous, avec l'esprit de charité.">
+<meta property="og:image" content="https://bencomputer-ops.github.io/Aidons-Nous-Vivants-Bukavu/aidons.jpg">
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants/Bukavu</a>
+  <nav>
+    <a href="accueil.html" class="on">Accueil</a>
+    <a href="activites.html" >Activités</a>
+    <a href="apropos.html" >À propos</a>
+    <a href="contact.html" >Contact</a>
+  </nav>
+</header>
+<main class="home">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Des jeunes qui agissent pour le bien de tous.</h1>
+    <p class="lead">Nous sommes un groupe de jeunes bénévoles de Bukavu. Nous agissons avec l'esprit de charité, et nous partageons ici ce que nous faisons.</p>
+    <div class="btns"><a class="btn" href="activites.html">Voir nos activités</a><a class="btn ghost" href="apropos.html">Qui sommes-nous</a></div>
+  </div>
+  <div class="seal"><img src="aidons.jpg" alt="Logo du groupe Aidons-nous Vivants"></div>
+</div></section>
+<section class="mission"><div class="wrap"><p>Mettre l'énergie de la jeunesse au service de ceux qui en ont besoin.</p></div></section>
+<section id="nums" class="wrap nums" hidden>
+  <div class="num"><b data-k="albums" data-to="0">0</b><span>albums d'activités</span></div>
+  <div class="num"><b data-k="photos" data-to="0">0</b><span>photos publiées</span></div>
+  <div class="num"><b data-k="videos" data-to="0">0</b><span>vidéos publiées</span></div>
+</section>
+<section id="recent" class="wrap recent" hidden>
+  <div class="head"><h2>Nos dernières photos</h2><a href="activites.html">Toutes les activités</a></div>
+  <div id="mosaic" class="mosaic"></div>
+</section>
+<section class="join"><div class="wrap">
+  <div>
+    <h2>Rejoignez les jeunes qui agissent à Bukavu.</h2>
+    <div class="soc">
+      <a data-s="facebook" href="https://www.facebook.com/profile.php?id=61584535768322" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i>Facebook</a>
+      <a data-s="whatsapp" href="https://whatsapp.com/channel/0029VbBJ0K8EQIapvASpIw3e" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+      <a data-s="youtube" href="https://youtube.com/@aidons-nousvivantsbukavu" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i>YouTube</a>
+      <a data-s="instagram" href="https://www.instagram.com/aidonsnousvivantsbukav" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>Instagram</a>
+    </div>
+  </div>
+  <a class="btn" href="contact.html">Nous écrire</a>
+</div></section>
+</main>
+<center><footer>© <span id="y"></span> Aidons-nous Vivants/Bukavu</footer></center>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="home.js?v=1"></script>
+</body>
+</html>

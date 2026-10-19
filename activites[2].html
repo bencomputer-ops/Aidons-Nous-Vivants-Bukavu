@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activités - Aidons-nous Vivants Bukavu</title>
+<meta name="description" content="Les photos et vidéos des activités du groupe de jeunes bénévoles Aidons-nous Vivants, à Bukavu.">
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css?v=2">
+<link rel="stylesheet" href="activites.css?v=7">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants/Bukavu</a>
+  <nav>
+    <a href="accueil.html" >Accueil</a>
+    <a href="activites.html" class="on">Activités</a>
+    <a href="apropos.html" >À propos</a>
+    <a href="contact.html" >Contact</a>
+  </nav>
+</header>
+<main class="home">
+    <div id="tabs"></div>
+    <div class="gal" id="grid"></div>
+  </section>
+  <div id="lb" role="dialog" aria-modal="true"><div id="lbc"></div><p id="lbt"></p><button class="btn" id="lbx">Fermer</button></div>
+</main>
+<center><footer>© <span id="y"></span> Aidons-nous Vivants/Bukavu</footer></center>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script>
+/* Diagnostic : la page affiche elle-même ce qui ne va pas, au lieu de rester vide */
+window.addEventListener('error',function(e){
+  var g=document.getElementById('grid'); if(!g) return; var t=e.target||{};
+  g.textContent = t.tagName ? 'Fichier introuvable : '+(t.src||t.href||'').split('/').pop().split('?')[0]+' (vérifiez son nom exact sur GitHub)'
+                            : 'Erreur : '+e.message+' ('+String(e.filename||'').split('/').pop().split('?')[0]+', ligne '+e.lineno+')';
+},true);
+setTimeout(function(){
+  if(!window.__ok){var g=document.getElementById('grid'); if(g&&!g.textContent) g.textContent="La page n'a pas pu démarrer : activites.js est absent, incomplet ou mal nommé.";}
+},3000);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="activites.js?v=5"></script>
+</body>
+</html>

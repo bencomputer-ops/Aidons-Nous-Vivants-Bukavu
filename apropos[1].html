@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À propos - Aidons-nous Vivants Bukavu</title>
+<meta name="description" content="Qui sommes-nous ? Un groupe de jeunes bénévoles de Bukavu qui agit pour le bien de tous, avec l'esprit de charité.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="À propos - Aidons-nous Vivants Bukavu">
+<meta property="og:description" content="Qui sommes-nous ? Un groupe de jeunes bénévoles de Bukavu qui agit pour le bien de tous, avec l'esprit de charité.">
+<meta property="og:image" content="https://bencomputer-ops.github.io/Aidons-Nous-Vivants-Bukavu/aidons.jpg">
+<link rel="icon" href="aidons.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="accueil.html"><img src="aidons.jpg" alt="">Aidons-nous Vivants/Bukavu</a>
+  <nav>
+    <a href="accueil.html" >Accueil</a>
+    <a href="activites.html" >Activités</a>
+    <a href="apropos.html" class="on">À propos</a>
+    <a href="contact.html" >Contact</a>
+  </nav>
+</header>
+<main class="home">
+<section class="phead"><div class="wrap"><h1>À propos du groupe</h1></div></section>
+<section class="wrap intro">
+  <div>
+    <p>Nous sommes un groupe de jeunes bénévoles de Bukavu, en République démocratique du Congo. Nous agissons pour le bien de tous, avec l'esprit de charité.</p>
+    <p>Nous organisons des rencontres d'échanges et de convivialité, et des actions au service de notre communauté. Chaque activité est publiée en photos et en vidéos dans nos albums.</p>
+    <div class="btns"><a class="btn" href="activites.html" style="margin-top:6px">Voir nos albums</a></div>
+  </div>
+  <div class="seal"><img src="aidons.jpg" alt="Logo du groupe"></div>
+</section>
+<section id="nums" class="wrap nums" hidden>
+  <div class="num"><b data-k="albums" data-to="0">0</b><span>albums d'activités</span></div>
+  <div class="num"><b data-k="photos" data-to="0">0</b><span>photos publiées</span></div>
+  <div class="num"><b data-k="videos" data-to="0">0</b><span>vidéos publiées</span></div>
+</section>
+<section class="wrap vals">
+  <h2>Ce qui nous guide</h2>
+  <dl>
+    <div class="def"><dt>Charité</dt><dd>Donner de notre temps et de notre énergie, sans rien attendre en retour.</dd></div>
+    <div class="def"><dt>Solidarité</dt><dd>Aider ceux qui en ont besoin, là où nous vivons, à Bukavu.</dd></div>
+    <div class="def"><dt>Engagement</dt><dd>Être présents de façon régulière et fiable, pour que l'aide compte vraiment.</dd></div>
+    <div class="def"><dt>Partage</dt><dd>Apprendre les uns des autres, au fil de nos rencontres.</dd></div>
+  </dl>
+</section>
+<section class="join"><div class="wrap">
+  <div>
+    <h2>Rejoignez les jeunes qui agissent à Bukavu.</h2>
+    <div class="soc">
+      <a data-s="facebook" href="https://www.facebook.com/profile.php?id=61584535768322" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i>Facebook</a>
+      <a data-s="whatsapp" href="https://whatsapp.com/channel/0029VbBJ0K8EQIapvASpIw3e" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+      <a data-s="youtube" href="https://youtube.com/@aidons-nousvivantsbukavu" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i>YouTube</a>
+      <a data-s="instagram" href="https://www.instagram.com/aidonsnousvivantsbukav" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>Instagram</a>
+    </div>
+  </div>
+  <a class="btn" href="contact.html">Nous écrire</a>
+</div></section>
+</main>
+<center><footer>© <span id="y"></span> Aidons-nous Vivants/Bukavu</footer></center>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="home.js?v=1"></script>
+</body>
+</html>
